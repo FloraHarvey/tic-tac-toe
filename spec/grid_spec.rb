@@ -9,7 +9,7 @@ describe Grid do
   end
 
   it "has coordinates" do
-    expect(grid.cells[0].X).to eq "A"
+    expect(grid.cells[:A1].X).to eq "A"
   end
 
 
