@@ -2,10 +2,10 @@ require 'game'
 
 describe Game do
 
-  let(:player){double :player, :mark => :X}
-  let(:player_class){double :player_class, :new => player}
+  let(:player1){double :player, :mark => :X}
+  let(:player2){double :player, :mark => :O}
   let(:grid){double :grid, :place => nil}
-  let(:game) { Game.new(player_class, grid) }
+  let(:game) { Game.new(player1, player2, grid) }
 
   it "has two players" do
     expect(game.player1).not_to be nil
@@ -24,6 +24,9 @@ describe Game do
     game.place_mark(:A1)
   end
 
+  it "can switch turns" do
+    expect{ game.switch_turns }.to change{ game.current_player }.from(game.player1).to(game.player2)
+  end
 
 
 end
