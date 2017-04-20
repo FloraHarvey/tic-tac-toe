@@ -5,8 +5,7 @@ describe Game do
   let(:player){double :player, :mark => :X}
   let(:player_class){double :player_class, :new => player}
   let(:grid){double :grid, :place => nil}
-  let(:grid_class){double :grid_class, :new => grid}
-  let(:game) { Game.new(player_class, grid_class) }
+  let(:game) { Game.new(player_class, grid) }
 
   it "has two players" do
     expect(game.player1).not_to be nil

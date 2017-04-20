@@ -1,3 +1,8 @@
+require_relative 'player'
+require_relative 'grid'
+require_relative 'cell'
+
+
 class Game
 
   attr_reader :player1, :player2, :current_player, :grid
@@ -6,7 +11,7 @@ class Game
     @player1 = player.new(:X)
     @player2 = player.new(:O)
     @current_player = player1
-    @grid = grid.new
+    @grid = grid
   end
 
   def place_mark(cell)
